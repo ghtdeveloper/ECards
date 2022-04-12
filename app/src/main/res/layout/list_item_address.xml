@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/cardviewReparacion"
+         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="6dp"
+        app:cardUseCompatPadding="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/relativeLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/textViewTituloVIN"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:text="@string/text_AddressLine1"
+                    android:textColor="@color/primaryTextColor"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textAvenueValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="7dp"
+                    android:text="@string/textValuexx"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toEndOf="@+id/textViewTituloVIN"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <TextView
+                    android:id="@+id/textViewMarca"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0dp"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:text="@string/text_State"
+                    android:textColor="@color/primaryTextColor"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewTituloVIN" />
+
+                <TextView
+                    android:id="@+id/textStateValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/textValuexx"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toEndOf="@+id/textViewMarca"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewTituloVIN" />
+
+
+                <TextView
+                    android:id="@+id/textViewCity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:text="@string/text_City"
+                    android:textColor="@color/primaryTextColor"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewModelo" />
+
+                <TextView
+                    android:id="@+id/textValueCity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/textValuexx"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toEndOf="@+id/textViewCity"
+                    app:layout_constraintTop_toBottomOf="@+id/textCountryValue" />
+
+                <TextView
+                    android:id="@+id/textViewModelo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:text="@string/text_Country"
+                    android:textColor="@color/primaryTextColor"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewMarca" />
+
+                <TextView
+                    android:id="@+id/textCountryValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="25dp"
+                    android:text="@string/textValuexx"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toEndOf="@+id/textViewModelo"
+                    app:layout_constraintTop_toBottomOf="@+id/textAvenueValue" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+

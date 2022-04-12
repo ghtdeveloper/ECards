@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/GHTDEVELOPER/Documents/proyect_android/ECards/app/src/main/res/drawable/ic_arrow_white_black_26dp.xml" value="0.1405" />
+        <entry key="..\:/Users/GHTDEVELOPER/Documents/proyect_android/ECards/app/src/main/res/drawable/ic_baseline_add_26.xml" value="0.1405" />
+        <entry key="..\:/Users/GHTDEVELOPER/Documents/proyect_android/ECards/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/GHTDEVELOPER/Documents/proyect_android/ECards/app/src/main/res/layout/activity_register_.xml" value="0.25" />
+        <entry key="..\:/Users/GHTDEVELOPER/Documents/proyect_android/ECards/app/src/main/res/layout/activity_splash.xml" value="0.25" />
+        <entry key="..\:/Users/GHTDEVELOPER/Documents/proyect_android/ECards/app/src/main/res/layout/layout_add_address.xml" value="0.25" />
+        <entry key="..\:/Users/GHTDEVELOPER/Documents/proyect_android/ECards/app/src/main/res/layout/list_item_address.xml" value="0.25" />
+        <entry key="..\:/Users/GHTDEVELOPER/Documents/proyect_android/ECards/app/src/main/res/layout/list_item_employees.xml" value="0.25" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

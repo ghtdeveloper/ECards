@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">ECards</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <!--Register-->
+    <string name="text_name">First Name</string>
+    <string name="text_lastName">Last Name</string>
+    <string name="text_personal_ID">Personal ID</string>
+    <string name="text_job_title">Job Title</string>
+    <string name="text_addresses">Addresses</string>
+    <string name="text_save">Save</string>
+    <string name="text_not_info">Apparently there is no information</string>
+    <!--List Item-->
+    <string name="text_FistName">First Name:</string>
+    <string name="text_Lastname">Last Name:</string>
+    <string name="text_job_Title">Job Tittle:</string>
+    <string name="textValuexx">XXXX</string>
+    <!--Address-->
+    <string name="text_AddressLine1">Avenue</string>
+    <string name="text_City">City</string>
+    <string name="text_State">State</string>
+    <string name="text_Country">Country</string>
+
+</resources>
