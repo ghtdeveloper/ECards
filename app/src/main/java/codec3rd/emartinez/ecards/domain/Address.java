@@ -1,7 +1,10 @@
 package codec3rd.emartinez.ecards.domain;
 
+import static androidx.room.ForeignKey.CASCADE;
+
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
+import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
 
 /**
@@ -26,6 +29,7 @@ public class Address
 
     @ColumnInfo(name = "Country")
     public String country;
+
 
 
     public Address(String addressLine1, String city, String state, String country)

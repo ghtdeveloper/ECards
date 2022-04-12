@@ -17,6 +17,7 @@ import androidx.room.Room;
 import com.google.android.material.textfield.TextInputEditText;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 import codec3rd.emartinez.ecards.R;
@@ -24,6 +25,7 @@ import codec3rd.emartinez.ecards.adapters.AdapterAddresss;
 import codec3rd.emartinez.ecards.contract.ContractInterface;
 import codec3rd.emartinez.ecards.domain.Address;
 import codec3rd.emartinez.ecards.domain.Employee;
+import codec3rd.emartinez.ecards.domain.EmployeeWithAddress;
 import codec3rd.emartinez.ecards.presenter.RegisterActivityIPresenter;
 import codec3rd.emartinez.ecards.repositories.room.database.AppDatabase;
 import codec3rd.emartinez.ecards.view.ui.main.MainActivity;
@@ -35,8 +37,10 @@ public class RegisterAcivity extends AppCompatActivity  implements ContractInter
     private RegisterActivityIPresenter objPresenter = null;
     private AdapterAddresss objAdapter = null;
     private ArrayList<Address> dataList;
+    private List<EmployeeWithAddress> listEMployeeWithAddress;
     private AlertDialog dialog;
     private AppDatabase db;
+    private int address_id;
     //Views
     private TextInputEditText textInputEditTextFirstName;
     private TextInputEditText textInputEditTextLastName;
@@ -55,6 +59,16 @@ public class RegisterAcivity extends AppCompatActivity  implements ContractInter
                 .allowMainThreadQueries().build();
         //Init Views
         initView();
+
+        /*if(db.employeeDao().getEmployeeWithAddress().isEmpty())
+        {
+            Log.d("Address","There is not address");
+        }else
+        {
+            Log.d("DATA",db.employeeDao().getEmployeeWithAddress().toString());
+            //dataList.addAll(db.employeeDao().getEmployeeWithAddress());
+        }*/
+
     }
 
     @Override
@@ -87,7 +101,8 @@ public class RegisterAcivity extends AppCompatActivity  implements ContractInter
                     requireNonNull(textInputEditTextFirstName.
                     getText()).toString(), Objects.requireNonNull(textInputEditTextLastName.
                     getText()).toString(), Objects.requireNonNull(textInputEditTextPersonalID.
-                    getText()).toString(), textInputEditTextPersonalID.getText().toString()));
+                    getText()).toString(), textInputEditTextJobTitle.getText().toString(),
+                    address_id));
 
             Toast.makeText(this, "Successfully registered employee!",
                     Toast.LENGTH_SHORT).show();
@@ -157,11 +172,19 @@ public class RegisterAcivity extends AppCompatActivity  implements ContractInter
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                dataList = new ArrayList<>();
+
+                dataList.add(new Address(txtAvenue.getText().toString(),
+                        txtCity.getText().toString(),txtState.getText().toString(),
+                        txtCountry.getText().toString()));
+
                 db.employeeDao().addAddress(new Address(txtAvenue.getText().toString(),
                         txtCity.getText().toString(),txtState.getText().toString(),
                         txtCountry.getText().toString()));
                 //objAdapter = new
                 dialog.dismiss();
+                showListAddress();
             }
         });
 
@@ -170,16 +193,28 @@ public class RegisterAcivity extends AppCompatActivity  implements ContractInter
         dialog.show();
     }
 
+    private void showListAddress()
+    {
+        if(db.employeeDao().getAllAddress().isEmpty())
+        {
+            Log.d("DATA ADDRESS","Not Address");
+        }else{
+            for(Address address : db.employeeDao().getAllAddress())
+            {
+                Log.d("DATA ADDRESS",String.valueOf(address.addressId));
+                address_id = address.addressId;
+                objAdapter = new AdapterAddresss(dataList);
+                rvAddress.setVisibility(View.VISIBLE);
+                rvAddress.setAdapter(objAdapter);
+            }
+        }
+       // db.employeeDao().
+
+
+    }
+
     @Override
     protected void onResume() {
         super.onResume();
-        dataList = new ArrayList<>();
-        if(db.employeeDao().getEmployeeWithAddress().isEmpty())
-        {
-            Log.d("Address","There is not address");
-        }else
-        {
-            //dataList.addAll(db.employeeDao().getEmployeeWithAddress());
-        }
     }
 }

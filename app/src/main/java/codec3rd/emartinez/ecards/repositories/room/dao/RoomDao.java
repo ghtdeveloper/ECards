@@ -23,15 +23,20 @@ public interface RoomDao
     @Query("Select * from Employee")
     List<Employee> getAll();
 
+    @Query("Select * from Address")
+    List<Address> getAllAddress();
+
     @Insert
     void addEmployee(Employee employee);
 
     @Insert
     void addAddress(Address address);
 
-    @Transaction
-    @Query("Select * from Employee")
-    List<EmployeeWithAddress >getEmployeeWithAddress();
+    @Insert
+    void addAddress(List<Address> address);
 
+    /*@Transaction
+    @Query("Select * from Employee")
+    List<EmployeeWithAddress >getEmployeeWithAddress();*/
 
 }
